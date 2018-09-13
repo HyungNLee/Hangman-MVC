@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 namespace HangMan.Models
 {
@@ -58,7 +59,20 @@ namespace HangMan.Models
 
     public string PickWord()
     {
-      return "hello";
+      Random r = new Random();
+      Dictionary<int, string>  wordBase = new Dictionary<int, string>();
+      wordBase.Add(1, "hospital");
+      wordBase.Add(2, "brain");
+      wordBase.Add(3, "duration");
+      wordBase.Add(4, "backlog");
+      wordBase.Add(5, "release");
+      wordBase.Add(6, "gear");
+      wordBase.Add(7, "rabbit");
+      wordBase.Add(8, "history");
+      wordBase.Add(9, "money");
+      wordBase.Add(10, "education");
+      int randomNum = r.Next(1, 11);
+      return wordBase[randomNum];
     }
 
     public string CreateDisplayWord()
