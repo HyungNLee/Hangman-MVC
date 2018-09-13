@@ -1,0 +1,23 @@
+<h1>Hangman</h1>
+
+<img src='~/img/@Model.GetPicture()' alt="Picture">
+
+<br>
+<br>
+<br>
+<p>@Model.GetDisplayWord()</p>
+<br>
+<br>
+<p>@Model.GetWrongList()</p>
+
+<h3>@Model.GetResult()</h3>
+
+<form action="/game/flow/@Model.GetId()" method="post">
+  <div class="form-group">
+    <label for="guess">Guess: </label>
+    <input id="guess" name="guess" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-info">Guess!</button>
+</form>
+
+<a href="/game/new"><button class="btn btn-danger">New Game!</button></a>
